@@ -1,6 +1,6 @@
 <?doctype html>
-<html>
-<head
+<html lang="eng"> <!-- Missing lang="en" attribute -->
+<head> <!-- Missing closing simbol -->
   <meta charset="utf-8">
   <title>Accessibility Course Overview</title>
   <link rel="stylesheet" href="project2.css">
@@ -9,45 +9,54 @@
 </head>
 <body>
 <div class="offscreen">Main Content</div>
-<div class="container">
+<div id="home" class="container">
 <div class="navigation">
-  <a href="#home"><img src="pics/home.png"></a><a href="#links"><img src="pics/links.png"></a> <a href="#signup"><img src="pics/signup.png"></a>
-</div>
+  <a href="#home" tabindex="1"><img src="pics/home.png" alt="home"></a><a href="#links" tabindex="2"><img src="pics/links.png" alt="links"></a> <a href="#signup" tabindex="3"><img src="pics/signup.png" alt="signup"></a>
+</div> <!-- I added tabindex, and alternative text -->
 
 <div id="accessibilitybanner"></div>
+
+<h1> Accessibility overview </h1> <!-- I added headings here for a better organization and to represent text that was done via color  -->
 
 <video width="480" height="360" id="thevideo">
   <source src="employment-movie.mp4" type="video/mp4">
 </video>
-<div id="videoplayer" tabindex="5">
-  <img width="50px" height="50px" src="pics/play.png">
+<div id="videoplayer" tabindex="4" >
+  <img width="50px" height="50px" alt="play" src="pics/play.png">
 </div>
 
-<div id="links" class="heading2">Links</div>
+<h2 id="links" class="heading2">Links</h2> <!-- Changed div to h2 -->
 <img src="pics/dot.png" alt="dot">&nbsp;<a href="https://visit.columbia.edu/content/accessibility">Accessibility Research at Columbia</a><br>
 <img src="pics/dot.png" alt="dot">&nbsp;<a href="https://barnard.edu/disabilityservices">Disability Services at Barnard</a><br>
 <img src="pics/dot.png" alt="dot">&nbsp;<a href="http://www.hampsterdance.com/classics/originaldance.htm">Hampster Dance</a><br>
 
 
-<div id="signup" class="heading2">Sign Up!</div>
+<h2 id="signup" class="heading2">Sign Up!</h2> <!-- Changed div to h2 -->
 <form id="sign-up-form">
 
 <p>
-  <span id="name">Name:</span>  <input name="fn" type="text" size="10" id="fn"> <input name="mi" type="text" size="1" id="mi">. <input name="ln" type="text" size="10" id="ln"><br>
+  <label for="fn" id="name">Name:</label>  
+  <input name="fn" type="text" size="10" id="fn"> 
+  <label for="mi" name="miname"> Middle Name:</label>
+  <input name="" ="mi" type="text" size="1" id="mi">. 
+  <label for="ln" id="lnname">Last Name:</label>
+  <input name="ln" type="text" size="10" id="ln"><br> <!-- here we added labels and I added additional information that will make it easier to fill out the form -->
 </p>
 <p>
-  <span id="email">Email:</span> <input id="em" name="em" type="text" size="20">
+  <label for="em" id="email">Email:</label> <input id="em" name="em" type="text" size="20"> <!-- I added label here -->
 </p>
-<p>
-  <span id="spamtext">Would you like to receive occassional emails with offers from us?</span>
-  <div id="receivespambutton">
+<div>
+  <label for="spamyn" id="spamtext">Would you like to receive occassional emails with offers from us?</label>
+ <!--  <div id="receivespambutton">
     <img src="pics/checked.png" alt="checkbox">
   </div>
-  <input type="hidden" name="spamyn" id="spamyn" value="n">
-</p>
-<p>
-  Comments:<br>
-  <textarea rows="5" cols="40"></textarea>
+  <input type="hidden" name="spamyn" id="spamyn" value="n"> -->
+<br>
+<input type="checkbox" name="spamyn" id="spamyn" value="">
+</div>
+<br>
+  <label for="com">Comments:</label><br>
+  <textarea id="com" rows="5" cols="40"></textarea>
 </p>
  <input type="button" value="Sign Up!" id="signupbutton">
 </form>
